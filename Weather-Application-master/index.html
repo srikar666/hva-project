@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+     <link rel="stylesheet" href="Untitled-1.css">
+    <title>Weather and calander</title>
+  </head>
+  <body>
+  
+
+
+<div class="hero">
+
+
+    <div class="calander">
+      <div class="left">
+        <p id="date">01</p>
+        <p id="day">sunday</p>
+      </div>
+      <div class="right">
+        <p id="month">january</p>
+        <p id="year">2024</p>
+      </div>
+   </div>
+</div>
+ <script> 
+    const date = document.getElementById("date");
+    const day = document.getElementById("day");
+    const month = document.getElementById("month");
+    const year = document.getElementById("year");
+
+    const today = new Date();
+
+    const weekDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday"];
+    const allMonths = ["january","february","March","April","May","June","July","August","September","October","November","December"];
+   
+    date.innerHTML = (today.getDate()<10?"0":"")+today.getDate();
+    day.innerHTML = weekDays [today.getDay()];
+    month.innerHTML = allMonth[today.getMonth()];
+    year.innerHTML = today.getfullYear();
+    </script>
+
+
+<div  class="hero">
+    <div class="card">
+      <div class="search">
+        <input type="text" placeholder="enter a city" spellcheck="false" />
+        <button><img src="images/search.png"></button>
+      </div>
+      <div class="error">
+        <p>Invalid city name</p>
+      </div>
+      <div class="weather">
+        <img src="images/rain.png" class="weatherIcon">
+        <h1 class="temp">-°C</h1>
+        <h2 class="city">-</h2>
+        <div class="details">
+            <div class="col">
+                <img src="images/humidity.png">
+                <div>
+                    <p class="humidity">-%</p>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="col">
+                <img src="images/wind.png">
+                <div>
+                    <p class="wind">- km/h</p>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+            <div class="col">
+                <img src="images/humidity.png">
+                <div>
+                    <p class="air">-</p>
+                    <p>Air Quality</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    <script src="app.js"></script>
+    
+
+  </body>
+</html>
